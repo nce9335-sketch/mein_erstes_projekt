@@ -1,64 +1,55 @@
-import nturl2path
+# =========================
+# TO-DO LIST APP (Deutsch)
+# =========================
 
-name = "wichtig"
-print("hallo, ich schreibe dir eine kurze Nachricht. Dieses Projekt ist sehr "
-      + name + " " + name + " " + name + " " + name + " für mich. ich küsse dich.")
-firmenname ="nurcekiCGMBH"
-berufsfeld = "Data Analyst"
-weiterbildungsdauer = 4 +2
-print("Hallo liebes Team von " + firmenname + " ich möchte gerne bei euch dem Firma " + firmenname + " arbeiten.ich würde mich über eine Antwort freuen!")
-print("ich habe eine weiterbildung zum " + berufsfeld + " gemacht")
-print(weiterbildungsdauer)
-x = "hallo "
-print(x)
-x= 50.2
-print(x)
-x= 50,2
-print(x)
-x= "Nur cekic"
-print(x[4])
-x="hallo welt"
-print(x[-1])
-x="nur und sude"
-print(x[7:12])
-print(x[0:])
-x= "Dieser Satz ist recht lang.wie lange ist er ?"
-print(len(x))
-x="ich möchte darüber sprechen"
-print(len(x))
-x="hallo"
-x="H" + x[1:]
-print(x)
-x="esra"
-x="E" + x[1:]
-print(x)
-X="hallo"
-print("hallo"+ "10")
-x="nur"
-print("nur"+str(x))
-x="22"
-print(" ich bin " + str(x) +"  jahre alt.")
-x="hallo Welt"
-print(x.upper())
-x="HALLO WELT"
-print(x.lower())
-x="ich lerne Pyhton"
-print(x.upper())
-x="ich ,lerne, Pyhton"
-print(x.split())
-print( 10 + 2 )
-print( 10 - 2 )
-print( 10 * 2 )
-print( 10 / 2 )
-print( 10 // 2 )
-print( 10 % 2 )
-print( 10 ** 2 )
+aufgaben = []
 
-print(type(10))
-print(type(10))
-print(type(5.20))
-print(type(10/2))
-print(type(10%3))
-print(5.2 * 4-2 )
-print(type(5.0 *3))
-print(type(5 *3))
+while True:
+    print("\n====== TO-DO LISTE ======")
+    print("1 - Aufgabe hinzufügen")
+    print("2 - Aufgaben anzeigen")
+    print("3 - Aufgabe löschen")
+    print("4 - Programm beenden")
+
+    auswahl = input("Wähle eine Option: ")
+
+    # Aufgabe hinzufügen
+    if auswahl == "1":
+        aufgabe = input("Neue Aufgabe eingeben: ")
+        aufgaben.append(aufgabe)
+        print("Aufgabe hinzugefügt!")
+
+    # Aufgaben anzeigen
+    elif auswahl == "2":
+        if len(aufgaben) == 0:
+            print("Keine Aufgaben vorhanden.")
+        else:
+            print("\nDeine Aufgaben:")
+            for i, aufgabe in enumerate(aufgaben, start=1):
+                print(f"{i}. {aufgabe}")
+
+    # Aufgabe löschen
+    elif auswahl == "3":
+        if len(aufgaben) == 0:
+            print("Keine Aufgaben zum Löschen.")
+        else:
+            print("\nAufgaben:")
+            for i, aufgabe in enumerate(aufgaben, start=1):
+                print(f"{i}. {aufgabe}")
+
+            nummer = int(input("Welche Aufgabe löschen? Nummer eingeben: "))
+
+            if 1 <= nummer <= len(aufgaben):
+                geloescht = aufgaben.pop(nummer - 1)
+                print(f"'{geloescht}' wurde gelöscht.")
+            else:
+                print("Ungültige Nummer!")
+
+    # Programm beenden
+    elif auswahl == "4":
+        print("Programm beendet. Tschüss ")
+        break
+
+    # Falsche Eingabe
+    else:
+        print("Ungültige Auswahl!")
